@@ -76,7 +76,7 @@ def temp_monthly():
 
 #Create the statistics route
 @app.route('/api/v1.0/start')
-@app.route('/api/v1.0/start')
+
 
 #Create the stats() function
 def stats(start=None, end=None):
@@ -88,6 +88,6 @@ def stats(start=None, end=None):
 
     results = session.query(*sel).\
         filter(Measurement.date >= start).\
-        filter)=(Measurement.date <= end).all()
+        filter=(Measurement.date <= end).all()
     temps = list(np.ravel(results))
     return jsonify(temps = temps)
